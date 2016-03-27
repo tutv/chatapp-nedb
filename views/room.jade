@@ -10,9 +10,9 @@ html
             each member in members
                 li=member.name
         ul#messages
-            form(action="")
-                input#m(autocomplete="off")
-                button Send
+        form(action="/")
+            input#m(autocomplete="off")
+            button Send
         script(src="/js/jquery.min.js")
         script(src="/js/socket.io.js")
         script(src="/js/app.js")
