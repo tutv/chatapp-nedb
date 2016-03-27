@@ -7,5 +7,6 @@
         "socket.io": "latest",
         "nedb": "latest",
         "lorem-ipsum": "latest"
+        "jade": "latest",
     }
 }

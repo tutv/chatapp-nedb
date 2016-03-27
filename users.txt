@@ -1,0 +1,5 @@
+//User
+_id: unique
+name: Text
+email:
+password:
