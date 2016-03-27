@@ -6,7 +6,7 @@
         "express": "4.13.3",
         "socket.io": "latest",
         "nedb": "latest",
-        "lorem-ipsum": "latest"
-        "jade": "latest",
+        "lorem-ipsum": "latest",
+        "jade": "latest"
     }
 }

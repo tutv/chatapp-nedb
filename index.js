@@ -34,6 +34,35 @@ messages_db.ensureIndex({fieldName: 'room_id'}, function (err) {
 	console.log(err);
 });
 
+app.get('/add', function (req, res) {
+	var d = new Date();
+	rooms_db.insert([
+		{
+			name      : 'Room 1',
+			members   : [],
+			created_at: d.getTime(),
+			updated_at: d.getTime()
+		}
+	], function (err, newDocs) {
+		console.log(newDocs);
+	});
+});
+
+app.get('/addUser', function (req, res) {
+	var d = new Date();
+	users_db.insert([
+		{
+			name      : 'Tú Trần 2',
+			email     : 'tutv@gmail.com',
+			pass      : md5('123456'),
+			created_at: d.getTime(),
+			updated_at: d.getTime()
+		}
+	], function (err, newDocs) {
+		console.log(newDocs);
+	});
+});
+
 /**
  * Index
  */
@@ -42,11 +71,47 @@ app.get('/', function (req, res) {
 });
 
 app.get('/room/:id', function (req, res) {
-	res.render('room', {title: 'Hey', message: 'Hello there!'});
+	var id = req.params.id;
+	rooms_db.find({_id: id}, function (err, docs) {
+		if (err) {
+			res.status(404).send('Sorry, we cannot find that!');
+		} else {
+			if (docs.length == 0) {
+				res.status(404).render('404');
+			} else {
+				var room = docs[0];
+				var memberIDs = room.members;
+				var memberID_end = memberIDs[memberIDs.length - 1];
+				var memberObjects = [];
+				for (var i = 0; i < memberIDs.length; i++) {
+					var user_id = memberIDs[i];
+					users_db.find({_id: user_id}, function (err, docs) {
+						var user = docs[0];
+						memberObjects.push(user);
+
+						if (memberID_end == user._id) {
+							render_room(res, room, memberObjects);
+						}
+					});
+				}
+			}
+		}
+	});
 });
 
+function render_room(res, room, memberObjects) {
+	res.render('room', {room: room, members: memberObjects});
+}
+
 app.get('/room', function (req, res) {
-	res.render('rooms', {title: 'Rooms'});
+	rooms_db.find({}, function (err, docs) {
+		if (err) {
+			res.status(404).send('Sorry, we cannot find that!');
+		} else {
+			res.render('rooms', {rooms: docs});
+		}
+	});
+
 });
 
 /**

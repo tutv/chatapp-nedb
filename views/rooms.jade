@@ -1,14 +1,15 @@
 doctype html
 html
     head
-        title=title
+        title Rooms
         meta(charset="utf-8")
         link(href="/css/main.css", rel="stylesheet")
     body
-        ul#messages
-            form(action="")
-                input#m(autocomplete="off")
-                button Send
+        ul#rooms
+            each room in rooms
+                li
+                    a(href="/room/" + room._id)= room.name
+
         script(src="/js/jquery.min.js")
         script(src="/js/socket.io.js")
         script(src="/js/app.js")
