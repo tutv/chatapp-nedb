@@ -1,2 +1,18 @@
+{"msg":"what up?","type":"message","timestamp":1459104145327,"_id":"OEACaHnacZyG3BsR"}
+{"msg":"When ux_10;","type":"message","timestamp":1459128999638,"_id":"ic5eNBHfBILCZ0R0"}
 {"msg":"okman","type":"message","timestamp":1459100766335,"_id":"lQuY2tHZCsJyr7JN"}
+{"msg":"ok man","type":"message","timestamp":1459104141273,"_id":"o1DPLPzLwsLWyumv"}
 {"$$indexCreated":{"fieldName":"room_id","unique":false,"sparse":false}}
+{"msg":"dsfsdfds","type":"message","timestamp":1459130528560,"_id":"nKezOnEFuQMOGB66"}
+{"msg":"sdfsdfsd","type":"message","timestamp":1459130736720,"_id":"WuGGTP3Ll61YanNd"}
+{"msg":"drfgd","type":"message","timestamp":1459130740062,"_id":"iGdRAqYAUDoG7Afm"}
+{"msg":"asfaf","type":"message","timestamp":1459130742020,"_id":"kQ3SVO1Wrzh44BDv"}
+{"msg":"dfdg","type":"message","timestamp":1459130745035,"_id":"DY1LLEuan0NZCMm4"}
+{"msg":" We have been actively testing NodeBB as a solution for our community platform. However, it lacks a lots of features we require for gamification. We need extensive functionality and integration of user points generation, redemption and an awesome award system like discourse. We have seen the NS Awards and Points plugin but they do not offer a lot of features and the developer has important features in his todo list but sadly, we don't have much time.  So, we are seeking for developers who can either develop a plugin for our needs or extend the functionality of the preexisting plugins to our needs. Please get back to us with information regarding your work and pricing structure.","type":"message","timestamp":1459130761324,"_id":"Kw8gDuMHPoZxWtVP"}
+{"msg":"db.books.find().forEach(     function (newBook) {         newBook.category = db.categories.findOne( { \"_id\": newBook.category } );         newBook.lendings = db.lendings.find( { \"book\": newBook._id  } ).toArray();         newBook.authors = db.authors.find( { \"_id\": { $in: newBook.authors }  } ).toArray();         db.booksReloaded.insert(newBook);     } );","type":"message","timestamp":1459130773321,"_id":"KZwh7UOfUNrw4PNt"}
+{"msg":"Definition and Usage The async attribute is a boolean attribute.  When present, it specifies that the script will be executed asynchronously as soon as it is available.  Note: The async attribute is only for external scripts (and should only be used if the src attribute is present).  Note: There are several ways an external script can be executed:  If async is present: The script is executed asynchronously with the rest of the page (the script will be executed while the page continues the parsing) If async is not present and defer is present: The script is executed when the page has finished parsing If neither async or defer is present: The script is fetched and executed immediately, before the browser continues parsing the page","type":"message","timestamp":1459130789824,"_id":"a5jlmZmFcjYCBqTy"}
+{"msg":"dfssfdsf","type":"message","timestamp":1459130796467,"_id":"3b2AFolua2JP2aHd"}
+{"msg":"sdf","type":"message","timestamp":1459130796773,"_id":"6HXYy7l9Lg6T3TVm"}
+{"msg":"sdf","type":"message","timestamp":1459130797356,"_id":"0WTGLB2mdlRJHKyc"}
+{"msg":"sdf","type":"message","timestamp":1459130797875,"_id":"mt4kjvIy7DC9m65n"}
+{"msg":"sdf","type":"message","timestamp":1459130798876,"_id":"Gt7KauJ7SwTlOluK"}

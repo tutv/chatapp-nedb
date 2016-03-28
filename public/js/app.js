@@ -9,16 +9,16 @@ jQuery(document).ready(function ($) {
 		$('#messages').append($('<li>').text(msg));
 	});
 
-	$.ajax({
-		url    : '/get',
-		method : 'GET',
-		success: function (data) {
-			for (var i = 0; i < data.length; i++) {
-				$('#messages').append($('<li>').text(data[i].msg));
-			}
-		},
-		error  : function (html) {
-			console.log(html);
-		}
-	});
+	//$.ajax({
+	//	url    : '/get',
+	//	method : 'GET',
+	//	success: function (data) {
+	//		for (var i = 0; i < data.length; i++) {
+	//			$('#messages').append($('<li>').text(data[i].msg));
+	//		}
+	//	},
+	//	error  : function (html) {
+	//		console.log(html);
+	//	}
+	//});
 });

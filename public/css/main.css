@@ -43,3 +43,12 @@ form button {
 #messages li:nth-child(odd) {
 	background: #eee;
 }
+
+/* Memmber */
+#members {
+
+}
+
+#members .active {
+	font-weight: bold;
+}

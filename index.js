@@ -24,7 +24,8 @@ app.set('views', __dirname + '/views');
 var Datastore = require('nedb'),
 	messages_db = new Datastore({filename: 'databases/messages.db', autoload: true}),
 	users_db = new Datastore({filename: 'databases/users.db', autoload: true}),
-	rooms_db = new Datastore({filename: 'databases/rooms.db', autoload: true});
+	rooms_db = new Datastore({filename: 'databases/rooms.db', autoload: true}),
+	posts_db = new Datastore({filename: 'databases/posts.db', autoload: true});
 
 /**
  * Index
@@ -81,19 +82,17 @@ app.get('/room/:id', function (req, res) {
 			} else {
 				var room = docs[0];
 				var memberIDs = room.members;
-				var memberID_end = memberIDs[memberIDs.length - 1];
-				var memberObjects = [];
-				for (var i = 0; i < memberIDs.length; i++) {
-					var user_id = memberIDs[i];
-					users_db.find({_id: user_id}, function (err, docs) {
-						var user = docs[0];
-						memberObjects.push(user);
+				users_db.find({_id: {$in: memberIDs}}, function (err, members) {
+					if (err) {
+						console.log('Error!');
+						console.log(err);
+						res.status(404).send('Error!');
+					}
 
-						if (memberID_end == user._id) {
-							render_room(res, room, memberObjects);
-						}
+					messages_db.find({}, function (err, messages) {
+						res.render('room', {room: room, members: members, recentMessages: messages});
 					});
-				}
+				});
 			}
 		}
 	});
